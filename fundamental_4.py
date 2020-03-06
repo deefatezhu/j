@@ -158,5 +158,9 @@ def make_ramen(*toppings):
 make_ramen('extra noodle')
 make_ramen('chashu','cheese')
 
-def make_ramen(size, *toppings)
-    print("")
+def make_ramen(size, *toppings):
+    print("\nMaking a "+str(size)+" size ramen with the following topping:")
+    for topping in toppings: 
+        print(toppings)
+make_ramen(12,'chashu')
+
