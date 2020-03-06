@@ -67,3 +67,13 @@ with open(filename,'w')as file_object:
     json.dump(numbers,file_object)
 
         #26. loading with JSON
+#step 1, import JSON
+import json
+#step 2, locate the file in JSON format and you need to open
+filename='numbers.json'
+#step 3, open it 
+with open(filename) as file_object: 
+    numbers=json.load(file_object)
+#check
+print(numbers)
+
