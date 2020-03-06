@@ -37,9 +37,8 @@ with open(filename)as file_object:
 #to get rid of the empty line in between, take: .rstrip()
         print(line.rstrip())
 
-
         #23. path 
-    #supposingly we need find a find_me.txt under a folder called text_files which is under python_work  
+    #supposingly: we need to find a find_me.txt under a folder called text_files which is under python_work  
 #with open('text_files/find_me.txt')as file_object: 
 
 #or: 
