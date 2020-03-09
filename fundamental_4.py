@@ -1,4 +1,4 @@
-#page 80-100, subject involing: DICTIONARY
+#page 80-132, subject involing: DICTIONARY, DEF 
 #these are all side notes, all the way pushed to the lefthand wall
     #these are sub-excise topics
         #these are categorical topics to keep me focused. W/o further due, I shall begin 
