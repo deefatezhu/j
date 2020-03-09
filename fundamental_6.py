@@ -1,4 +1,4 @@
-#page 287-, subject involing: MATPLOTLIB,  IMPORT DATA, DATETIME
+#page 287-325, subject involing: MATPLOTLIB,  IMPORT DATA, DATETIME, COLORING FIGURE
 #these are all side notes, all the way pushed to the lefthand wall
     #these are sub-excise topics
         #these are categorical topics to keep me focused. W/o further due, I shall begin 
@@ -163,9 +163,83 @@ with open(filename) as f:
     reader=csv.reader(f)
     header_row=next(reader)
 
-dates, highs=[],[]
-for row in reader: 
-    current_date=datetime.strptime(row[0],"%Y-%m-%d")
-    #strptime helps to read date to formatted"%Y-etc-etc
-    dates.append(current_date)
+    dates, highs=[],[]
+    for row in reader: 
+        current_date=datetime.strptime(row[0],"%Y-%m-%d")
+        #strptime helps to read date to formatted"%Y-etc-etc
+        dates.append(current_date)
+        high=int(row[1])
+        highs.append(high)
 
+fig=plt.figure(dpi=128,figsize=(10,6))
+plt.plot(dates,highs,c='red')
+
+plt.title("Daily Max Temperature/July 2014",fontsize=24)
+plt.xlabel("Date",fontsize=14)
+fig.autofmt_xdate()
+#this helps the dates tb better formatted, w/o clashing into each other 
+plt.ylabel("MAx Temp in F",fontsize=14)
+plt.tick_params(axis='both',which='major',labelsize=16)
+plt.show()
+
+    #same excercise to wider range of dates
+import csv 
+filename='sitka_weather_2014.csv'
+with open(filename)as f: 
+    reader=csv.reader(f)
+    header_row=next(reader)
+
+    dates, highs, lows=[],[],[]
+    for row in reader: 
+        current_date=datetime.strptime(row[0],"%Y-%m-%d")
+        dates.append(current_date)
+
+        high=int(row[1])
+        highs.append(high)
+
+        low=int(row[3])
+        lows.append(low)
+
+fig=plt.figure(dpi=128,figsize=(10,6))
+plt.plot(dates, highs,c='red')
+plt.plot(dates, lows,c='blue')
+#two things to looks at now, two lines 
+
+plt.title("Daily Max and Min Temp/2014",fontsize=24)
+plt.xlabel('',fontsize=14)
+
+fig.autofmt_xdate()
+plt.ylabel("Max Temp in F",fontsize=14)
+plt.tick_params(axis='both',which='major',labelsize=16)
+plt.show()
+
+    #coloring the distance btwn Max and Min temp
+import csv 
+filename='sitka_weather_2014.csv'
+with open(filename)as f: 
+    reader=csv.reader(f)
+    header_row=next(reader)
+
+    dates, highs, lows=[],[],[]
+    for row in reader: 
+        current_date=datetime.strptime(row[0],"%Y-%m-%d")
+        dates.append(current_date)
+
+        high=int(row[1])
+        highs.append(high)
+
+        low=int(row[3])
+        lows.append(low)
+
+fig=plt.figure(dpi=128,figsize=(10,6))
+plt.plot(dates,highs,c='red',alpha=0.5)
+#alpha stands for how transparent the color will be 
+#0 = transparent, and 1 = solid color 
+plt.plot(dates,lows,c='blue',alpha=0.5)
+plt.fill_between(dates, highs,lows,facecolor='blue',alpha=0.1)
+
+plt.title("Daily Max and Min Temp/2014 with shades",fontsize=24)
+plt.ylabel("Max Temp in F",fontsize=14)
+plt.tick_params(axis='both',which='major',labelsize=16)
+
+plt.show()
