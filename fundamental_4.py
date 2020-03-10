@@ -103,6 +103,16 @@ def get_formatted_name(first_name,last_name):
 artist_0=get_formatted_name('marcel','duchamp')
 print(artist_0.title())
 #from my understanding, return mingles the full name part, and now get_formatted_name got formulated as full name
+#in other words, if you don't return full_name, it has nothing in store, but it you return full_name,  the function is running
+#e.g.  >>>def something(x)
+#      ''' print x
+#      >>something(3)
+#      3
+#      >>>d=something(3)
+#      3
+#      >>>print d
+#      None
+#vs if returned x, d=3
 
     #if-else middle name example 
 def get_formatted_name(first_name,last_name,middle_name=''):
