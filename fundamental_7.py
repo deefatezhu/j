@@ -40,21 +40,21 @@ dates=[]
 months=[]
 weeks=[]
 weekdays=[]
-close=[]
+closed_price=[]
 
 #step 2: get each day's data compiled into each list 
 for btc_dict in btc_data: 
     dates.append(btc_dict['date'])
     months.append(int(btc_dict['month']))
     weeks.append(btc_dict['weekday'])
-    close.append(int(float(btc_dict['close']))
+    closed_price.append(int(float(btc_dict['close'])))
 #step 3: now we have the x variable: dates 
 #y variable: btc price 
 #however, dates(365) may look too crowded so we need pygal to beautify 
 
-#step 4: pygal 
-import pygal 
-line_chart=pygal.line(x_label_rotation=20,show_minor_x_labels=False)
+# step 4: pygal 
+import pygal
+line_chart=pygal.Line(x_label_rotation=20,show_minor_x_labels=False)
 #x_label_rotation= x_label: rotate by 20 degree, avoid crowdiness
 #show_minor_x_labels=False: no need to show ALL x 
 line_chart.title='Closing Price/2017'
@@ -68,6 +68,4 @@ line_chart.add("closing price",close)
 #I suppose, this .add is the y variable: 'closing price'taken from the y, which is the close list 
 line_chart.render_to_file('BTC Closing Price 2017.svg')
 #render saves the line chart 
-
-        #33. Using API
 

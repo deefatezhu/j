@@ -75,7 +75,6 @@ plt.show()
 #under example--color examples--colormaps_reference 
 
         #28. Pygal 
-#####problematic 
 
 
         #29 import data
