@@ -1,4 +1,5 @@
 #In this excercise I would like to explore the top10 most commonly used*defined by myself... Pygal examples 
+#when in doubt, go visit: http://www.pygal.org   
        
         #1. Bar Chart 
 import pygal
